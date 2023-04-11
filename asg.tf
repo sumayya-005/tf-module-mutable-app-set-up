@@ -5,9 +5,9 @@ resource "aws_launch_template" "launch-template" {
 }
 
 resource "aws_autoscaling_group" "bar" {
-  desired_capacity   = 1
-  max_size           = 1
-  min_size           = 1
+  desired_capacity   = var.min_size
+  max_size           = var.max_size
+  min_size           = var.min_size
 
   launch_template {
     id      = aws_launch_template.launch-template.id
