@@ -16,3 +16,9 @@ resource "aws_autoscaling_group" "bar" {
     version = "$Latest"
   }
 }
+
+tag ={
+  key = "Name"
+  value = "${var.env}-${var.name}"
+  propogate_at_launch = true
+}
