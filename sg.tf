@@ -4,12 +4,11 @@ resource "aws_security_group" "sg" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+    cidr_blocks      = [var.BASTION_NODE]
   }
 
   egress {
