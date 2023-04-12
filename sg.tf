@@ -1,7 +1,7 @@
-resource "aws_security_group" "" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+resource "aws_security_group" "sg" {
+  name        = "${var.env}-${var.name}-ec2.sg"
+  description = "${var.env}-${var.name}-ec2.sg"
+  vpc_id      = var.vpc_id
 
   ingress {
     description      = "TLS from VPC"
