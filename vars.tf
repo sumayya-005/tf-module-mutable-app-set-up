@@ -8,3 +8,4 @@ variable "min_size" {}
  variable "BASTION_NODE" {}
  variable "private_zone_id" {}
  variable "app_port_no" {}
+ variable"PROMETHEUS_NODE" {}

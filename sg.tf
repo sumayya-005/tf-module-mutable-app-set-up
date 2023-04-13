@@ -24,7 +24,7 @@ resource "aws_security_group" "sg" {
     from_port        = var.app_port_no
     to_port          = var.app_port_no
     protocol         = "tcp"
-    cidr_blocks      = [var.BASTION_NODE]
+    cidr_blocks      = [var.PROMETHEUS_NODE]
   }
 
   egress {
