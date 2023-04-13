@@ -32,7 +32,7 @@ resource "aws_autoscaling_group" "bar" {
   }
 }
 
-tag ={
+tags ={
   key = "Name"
   value = "${var.env}-${var.name}"
   propogate_at_launch = true
