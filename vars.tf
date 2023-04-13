@@ -7,4 +7,4 @@ variable "min_size" {}
  variable "vpc_id" {}
  variable "BASTION_NODE" {}
  variable "private_zone_id" {}
- variable "port_no" {}
+ variable "app_port_no" {}

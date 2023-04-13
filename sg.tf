@@ -11,6 +11,14 @@ resource "aws_security_group" "sg" {
     cidr_blocks      = [var.BASTION_NODE]
   }
 
+  ingress {
+    description      = "APP"
+    from_port        = var.app_port_no
+    to_port          = var.app_port_no
+    protocol         = "tcp"
+    cidr_blocks      = [var.BASTION_NODE]
+  }
+
   egress {
     from_port        = 0
     to_port          = 0
