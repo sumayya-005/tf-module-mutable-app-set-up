@@ -1,4 +1,4 @@
-esource "aws_iam_policy" "policy" {
+resource "aws_iam_policy" "policy" {
   name        = "${var.env}-${var.name}-policy"
   path        = "/"
   description = "${var.env}-${var.name}-policy"
