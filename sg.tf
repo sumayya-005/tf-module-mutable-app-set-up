@@ -20,6 +20,6 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "${var.env}-${var.name}-ec2.sg"
   }
 }
