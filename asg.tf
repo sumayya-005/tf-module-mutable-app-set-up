@@ -13,10 +13,10 @@ resource "aws_launch_template" "launch-template" {
 #  }
 #
 #
-#  user_data = base64encode(templatefile("${path.module}/ansible-pull.sh", {
-#    COMPONENT = var.name
-#    ENV       = var.env
-#  }))
+  user_data = base64encode(templatefile("${path.module}/ansible-pull.sh", {
+    COMPONENT = var.name
+    ENV       = var.env
+  }))
 }
 
 resource "aws_autoscaling_group" "asg" {
