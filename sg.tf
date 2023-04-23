@@ -21,8 +21,8 @@ resource "aws_security_group" "sg" {
 
   ingress {
     description      = "PROMETHEUS"
-    from_port        = var.app_port_no
-    to_port          = var.app_port_no
+    from_port        = 9100
+    to_port          = 9100
     protocol         = "tcp"
     cidr_blocks      = [var.PROMETHEUS_NODE]
   }
