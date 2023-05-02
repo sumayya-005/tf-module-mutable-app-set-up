@@ -4,13 +4,13 @@ resource "aws_launch_template" "launch-template" {
   instance_type          = var.instance_type
 #  vpc_security_group_ids = [aws_security_group.main.id]
 
-#  iam_instance_profile {
-#    name = aws_iam_instance_profile.instance_profile.name
-#  }
-#
-#  instance_market_options {
-#    market_type = "spot"
-#  }
+  iam_instance_profile {
+    name = aws_iam_instance_profile.instance_profile.name
+  }
+
+  instance_market_options {
+    market_type = "spot"
+  }
 
 
   user_data = base64encode(templatefile("${path.module}/ansible-pull.sh", {
