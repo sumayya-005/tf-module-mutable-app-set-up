@@ -1,4 +1,4 @@
-resource "aws_security_group" "main" {
+resource "aws_security_group" "sg" {
   name        = "${var.env}-${var.name}-ec2.sg"
   description = "${var.env}-${var.name}-ec2.sg"
   vpc_id      = var.vpc_id
