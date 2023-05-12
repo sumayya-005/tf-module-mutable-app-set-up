@@ -11,8 +11,8 @@ variable "min_size" {}
  variable"PROMETHEUS_NODE" {}
  variable "alb" {}
  variable "private_zone_id" {}
-#  variable "lb_listener_priority"{}
-# variable "type" {}
+  variable "lb_listener_priority"{}
+ variable "type" {}
 
 # variable "public_zone_id" {}
 # variable "public_dns_name" {}

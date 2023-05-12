@@ -13,21 +13,21 @@ resource "aws_lb_target_group" "main" {
   }
 }
 
-#resource "aws_lb_listener_rule" "rule-frontend" {
+resource "aws_lb_listener_rule" "rule" {
 #  count        = var.type == "backend" ? 1:0
-#  listener_arn = var.alb ["private"].lb_listener_arn
-#  priority     = 100
-#
-#  action {
-#    type             = "forward"
-#    target_group_arn = aws_lb_target_group.main.arn
-#  }
-#
-#
-#  condition {
-#    host_header {
-#      values = ["${var.name}-${var.env}.roboshop.internal"]
-#    }
-#  }
-#}
+  listener_arn = var.alb ["private"].lb_listener_arn
+  priority     = 100
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.static.arn
+  }
+
+
+  condition {
+    host_header {
+      values = ["${var.name}-${var.env}.roboshop.internal"]
+    }
+  }
+}
 
