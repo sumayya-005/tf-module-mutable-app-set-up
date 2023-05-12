@@ -15,3 +15,4 @@
  variable "type" {}
  variable "public_zone_id" {}
  variable "public_dns_name" {}
+ variable "ACM_ARN" {}
