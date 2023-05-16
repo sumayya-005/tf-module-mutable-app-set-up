@@ -10,14 +10,14 @@ resource "aws_security_group" "sg" {
     protocol         = "tcp"
     cidr_blocks      = [var.BASTION_NODE]
 }
-#
-#  ingress {
-#    description      = "APP"
-#    from_port        = var.app_port_no
-#    to_port          = var.app_port_no
-#    protocol         = "tcp"
-#    cidr_blocks      = [var.vpc_cidr]
-#  }
+
+  ingress {
+    description      = "APP"
+    from_port        = var.app_port_no
+    to_port          = var.app_port_no
+    protocol         = "tcp"
+    cidr_blocks      = [var.vpc_cidr]
+  }
 
   ingress {
     description      = "PROMETHEUS"
